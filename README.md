@@ -6,7 +6,7 @@
 	</h1>
 </div>
 <div align="center">
-	<a href="//www.google.com"><img src=/src/img.png" class="media-object  img-responsive img-thumbnail"></a>
+	<a href="//www.google.com"><img src=/src/Screenshot from 2020-02-08 21-05-58.png" class="media-object  img-responsive img-thumbnail"></a>
 <br>
 </div>
 
