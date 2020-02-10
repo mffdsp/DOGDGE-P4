@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://gameNode.gd" type="Script" id=1]
+[ext_resource path="res://src/background gameover.png" type="Texture" id=2]
+[ext_resource path="res://src/Die dog.png" type="Texture" id=3]
+[ext_resource path="res://Menu.gd" type="Script" id=4]
+[ext_resource path="res://src/button menu.png" type="Texture" id=5]
+[ext_resource path="res://src/Button menu hover.png" type="Texture" id=6]
+[ext_resource path="res://Restart.gd" type="Script" id=7]
+[ext_resource path="res://src/Button restart hover.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "die"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("dog:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+
+[node name="gameNode" type="Node"]
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="backGround" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 687.157, 387.733 )
+scale = Vector2( 1.97748, 1.94973 )
+texture = ExtResource( 2 )
+
+[node name="dog" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 161.885, 455.646 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+hframes = 7
+frame = 5
+region_enabled = true
+region_rect = Rect2( -101.913, 810.413, 3343.4, 603.17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+anims/die = SubResource( 1 )
+
+[node name="Menu" type="Button" parent="CanvasLayer"]
+margin_left = 956.205
+margin_top = 615.166
+margin_right = 1300.2
+margin_bottom = 732.166
+flat = true
+script = ExtResource( 4 )
+
+[node name="normal" type="Sprite" parent="CanvasLayer/Menu"]
+position = Vector2( 162.706, 67.4822 )
+scale = Vector2( 1.95329, 2.05147 )
+texture = ExtResource( 5 )
+
+[node name="hover" type="Sprite" parent="CanvasLayer/Menu"]
+position = Vector2( 160.671, 65.7476 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="Restart" type="Button" parent="CanvasLayer"]
+margin_left = 73.7701
+margin_top = 625.433
+margin_right = 376.77
+margin_bottom = 729.433
+flat = true
+script = ExtResource( 7 )
+
+[node name="normal" type="Sprite" parent="CanvasLayer/Restart"]
+
+[node name="hover" type="Sprite" parent="CanvasLayer/Restart"]
+position = Vector2( 140.69, 53.757 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+
+[node name="pont" type="Label" parent="."]
+margin_left = 535.463
+margin_top = 622.405
+margin_right = 690.463
+margin_bottom = 699.405
+text = "OPOKDWKOPDW
+"
+clip_text = true
+percent_visible = 0.272727
+max_lines_visible = 1

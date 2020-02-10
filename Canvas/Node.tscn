@@ -1,0 +1,332 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://background2.png" type="Texture" id=1]
+[ext_resource path="res://main.gd" type="Script" id=2]
+[ext_resource path="res://person.gd" type="Script" id=3]
+[ext_resource path="res://sprites/Idle Dog.png" type="Texture" id=4]
+[ext_resource path="res://sound/386638__jalastram__sfx-jump-45.wav" type="AudioStream" id=5]
+[ext_resource path="res://sound/169994_peepholecircus_power-down (online-audio-converter.com).wav" type="AudioStream" id=6]
+[ext_resource path="res://sprites/Run dog.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Run dog 2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Jump dog.png" type="Texture" id=9]
+[ext_resource path="res://sprites/magic_007.png" type="Texture" id=10]
+[ext_resource path="res://sprites/magic_008.png" type="Texture" id=11]
+[ext_resource path="res://sound/bensound-adventure (online-audio-converter.com).wav" type="AudioStream" id=12]
+[ext_resource path="res://Popup.gd" type="Script" id=13]
+[ext_resource path="res://Label.gd" type="Script" id=14]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19.9597, 56.0645 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jump:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.75, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 5, 3, 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("normal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "playerDown"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("normal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "pulou"
+
+[sub_resource type="Animation" id=6]
+resource_name = "jump"
+
+[sub_resource type="Animation" id=7]
+length = 0.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("normal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.58, 0.65, 0.76, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 8, 7 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "playerDown"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("normal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "pulou"
+
+[sub_resource type="Animation" id=10]
+resource_name = "run"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Run:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "jump"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/path = NodePath("Run2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("normal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.58, 0.65, 0.76, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 8, 7 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "playerDown"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("normal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "pulou"
+
+[sub_resource type="Animation" id=15]
+resource_name = "run"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Run:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.55, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.0638943, 0.0663215, 0.0678711, 1 )
+draw_center = false
+
+[node name="mainNode" type="Node2D"]
+
+[node name="fundo" type="Sprite" parent="."]
+position = Vector2( 685.51, 409.092 )
+scale = Vector2( 1.97464, 2.18761 )
+texture = ExtResource( 1 )
+
+[node name="pont2" type="Label" parent="."]
+pause_mode = 2
+margin_left = 30.1468
+margin_top = 34.9068
+margin_right = 163.147
+margin_bottom = 92.9068
+text = "PONTUAÇÃO : "
+
+[node name="main" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="person" type="Area2D" parent="main"]
+position = Vector2( 79.2077, 552.813 )
+script = ExtResource( 3 )
+
+[node name="normal" type="Sprite" parent="main/person"]
+position = Vector2( 10.7025, -26.6296 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+hframes = 9
+frame = 4
+region_enabled = true
+region_rect = Rect2( 74.0766, 798.43, 3571.08, 619.148 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/person"]
+position = Vector2( 8.18895, -35.3967 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="main/person"]
+anims/jump = SubResource( 2 )
+anims/playerAnimation = SubResource( 3 )
+anims/playerDown = SubResource( 4 )
+anims/pulou = SubResource( 5 )
+
+[node name="jumpSound" type="AudioStreamPlayer2D" parent="main/person"]
+stream = ExtResource( 5 )
+volume_db = -20.0
+
+[node name="run" type="AnimationPlayer" parent="main/person"]
+anims/jump = SubResource( 6 )
+anims/playerAnimation = SubResource( 7 )
+anims/playerDown = SubResource( 8 )
+anims/pulou = SubResource( 9 )
+anims/run = SubResource( 10 )
+
+[node name="run2" type="AnimationPlayer" parent="main/person"]
+anims/jump = SubResource( 11 )
+anims/playerAnimation = SubResource( 12 )
+anims/playerDown = SubResource( 13 )
+anims/pulou = SubResource( 14 )
+anims/run = SubResource( 15 )
+
+[node name="shieldSound" type="AudioStreamPlayer2D" parent="main/person"]
+stream = ExtResource( 6 )
+
+[node name="Run" type="Sprite" parent="main/person"]
+visible = false
+position = Vector2( 9, -38 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 7 )
+hframes = 8
+frame = 7
+region_enabled = true
+region_rect = Rect2( 51.6536, 831.632, 3503.18, 439.395 )
+
+[node name="Run2" type="Sprite" parent="main/person"]
+visible = false
+position = Vector2( -10, -38 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 8 )
+hframes = 8
+frame = 1
+region_enabled = true
+region_rect = Rect2( 51.6536, 831.632, 3503.18, 439.395 )
+
+[node name="Jump" type="Sprite" parent="main/person"]
+position = Vector2( -10, -38 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 9 )
+hframes = 7
+frame = 5
+region_enabled = true
+region_rect = Rect2( 440.4, 831.632, 3535.13, 439.395 )
+
+[node name="weed" type="Sprite" parent="main"]
+position = Vector2( 98.8628, 490 )
+scale = Vector2( 1.29217, 1.33142 )
+texture = ExtResource( 10 )
+region_enabled = true
+region_rect = Rect2( 785, 23, 155, 133 )
+
+[node name="weed2" type="Sprite" parent="main"]
+position = Vector2( 90.976, 383.586 )
+scale = Vector2( 1.29217, 1.33142 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 11.7086, 593.69, 155.786, 115.841 )
+
+[node name="mainMusic" type="AudioStreamPlayer2D" parent="main"]
+stream = ExtResource( 12 )
+
+[node name="pausePop" type="Popup" parent="."]
+pause_mode = 2
+visible = true
+modulate = Color( 0.368627, 0.0745098, 0.219608, 1 )
+self_modulate = Color( 0.286275, 0.227451, 0.227451, 1 )
+margin_left = -18.4549
+margin_top = -30.7582
+margin_right = 21.5451
+margin_bottom = 9.24181
+script = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="pausePop"]
+margin_left = 173.85
+margin_top = 213.633
+margin_right = 231.85
+margin_bottom = 307.633
+custom_styles/normal = SubResource( 16 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "GAME
+PAUSED"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+uppercase = true
+script = ExtResource( 14 )

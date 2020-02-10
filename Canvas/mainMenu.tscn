@@ -1,0 +1,120 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://menuz.gd" type="Script" id=1]
+[ext_resource path="res://box.gd" type="Script" id=2]
+[ext_resource path="res://src/background menu.png" type="Texture" id=3]
+[ext_resource path="res://Button.gd" type="Script" id=4]
+[ext_resource path="res://src/button play.png" type="Texture" id=5]
+[ext_resource path="res://src/button play hover.png" type="Texture" id=6]
+[ext_resource path="res://optionBtn.gd" type="Script" id=7]
+[ext_resource path="res://src/help button.png" type="Texture" id=8]
+[ext_resource path="res://src/help button hover.png" type="Texture" id=9]
+[ext_resource path="res://optionBtn2.gd" type="Script" id=10]
+[ext_resource path="res://src/Button credits.png" type="Texture" id=11]
+[ext_resource path="res://src/Button credits hover.png" type="Texture" id=12]
+[ext_resource path="res://sprites/Run dog.png" type="Texture" id=13]
+[ext_resource path="res://sound/bensound-ukulele (online-audio-converter.com).wav" type="AudioStream" id=14]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Gatinho"
+length = 0.55
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Gatu:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0410147, 0.1, 0.2, 0.3, 0.301, 0.418234, 0.513512, 1, 1.1, 1.2, 1.3, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 4, 3, 2, 1, 2 ]
+}
+
+[node name="mainNode" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="box" type="CanvasLayer" parent="."]
+script = ExtResource( 2 )
+
+[node name="backGround" type="Sprite" parent="box"]
+position = Vector2( -2, -3.667 )
+scale = Vector2( 1.96, 1.95 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="playBtn" type="Button" parent="box"]
+margin_left = 66.0
+margin_top = 613.0
+margin_right = 422.0
+margin_bottom = 737.0
+action_mode = 0
+flat = true
+script = ExtResource( 4 )
+
+[node name="normal" type="Sprite" parent="box/playBtn"]
+position = Vector2( 166.67, 77.4677 )
+scale = Vector2( 1.94143, 1.96521 )
+texture = ExtResource( 5 )
+
+[node name="hover" type="Sprite" parent="box/playBtn"]
+visible = false
+position = Vector2( 167.67, 79.4677 )
+scale = Vector2( 1.94143, 1.96521 )
+texture = ExtResource( 6 )
+
+[node name="optionBtn" type="Button" parent="box"]
+margin_left = 494.403
+margin_top = 617.76
+margin_right = 850.403
+margin_bottom = 741.76
+action_mode = 0
+flat = true
+script = ExtResource( 7 )
+
+[node name="normal" type="Sprite" parent="box/optionBtn"]
+position = Vector2( 166.709, 70.121 )
+scale = Vector2( 1.94143, 1.96521 )
+texture = ExtResource( 8 )
+
+[node name="hover" type="Sprite" parent="box/optionBtn"]
+visible = false
+position = Vector2( 167.67, 73.4677 )
+scale = Vector2( 1.94143, 1.96521 )
+texture = ExtResource( 9 )
+
+[node name="optionBtn2" type="Button" parent="box"]
+margin_left = 923.403
+margin_top = 617.76
+margin_right = 1279.4
+margin_bottom = 741.76
+action_mode = 0
+flat = true
+script = ExtResource( 10 )
+
+[node name="normal" type="Sprite" parent="box/optionBtn2"]
+position = Vector2( 166.709, 70.121 )
+scale = Vector2( 1.94143, 1.96521 )
+texture = ExtResource( 11 )
+
+[node name="hover" type="Sprite" parent="box/optionBtn2"]
+visible = false
+position = Vector2( 167.67, 73.4677 )
+scale = Vector2( 1.94143, 1.96521 )
+texture = ExtResource( 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="box"]
+anims/Gatinho = SubResource( 1 )
+
+[node name="Gatu" type="Sprite" parent="box"]
+position = Vector2( 134.362, 375.84 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 13 )
+hframes = 8
+frame = 2
+region_enabled = true
+region_rect = Rect2( 17.2186, 804.698, 3499.18, 467.357 )
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )

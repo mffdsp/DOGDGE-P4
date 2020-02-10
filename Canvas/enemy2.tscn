@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://emeny2.gd" type="Script" id=1]
+[ext_resource path="res://src/02c10a0a1a538b1235fb1da94df19121-doces-de-hortel--pimenta-vermelha-1-by-vexels.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.1413, 26.3061 )
+
+[node name="Area2D" type="Area2D"]
+position = Vector2( 230, 0 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -64.7845, -140.318 )
+shape = SubResource( 1 )
+
+[node name="miledy_dragonknight_lance" type="Sprite" parent="."]
+position = Vector2( -66.392, -141.008 )
+scale = Vector2( 0.172228, 0.143484 )
+texture = ExtResource( 2 )
+region_rect = Rect2( 124.078, 93.7585, 102.499, 104.388 )
