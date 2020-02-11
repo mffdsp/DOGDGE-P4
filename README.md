@@ -11,11 +11,10 @@
 </div>
 
 <p align="center">
-	<a href="https://github.com/mffdsp/WEB_PROJECT_P3/tree/master/js">Verificar JS</a>&nbsp;&nbsp;&nbsp;
-	<a href="https://github.com/mffdsp/WEB_PROJECT_P3/blob/master/main.css">CSS</a>&nbsp;&nbsp;&nbsp;
-	<a href="https://github.com/mffdsp/WEB_PROJECT_P3/blob/master/index.html">index.html</a>&nbsp;&nbsp;&nbsp;
-	<a href="https://js-health.firebaseapp.com/">HOST</a>&nbsp;&nbsp;&nbsp;
+	<a href="https://drive.google.com/drive/u/0/folders/1jfpH6tQK2in468z1u6Dv3MsAc6MA2ktr">Arquivos</a>&nbsp;&nbsp;&nbsp;
+	<a href="mailto:hgms@ic.ufal.br" >hgms@ic.ufal.br</a>&nbsp;&nbsp;&nbsp;
 	<a href="mailto:mffsp@ic.ufal.br" >mffsp@ic.ufal.br</a>&nbsp;&nbsp;&nbsp;
+	
 	
 </p>
 
